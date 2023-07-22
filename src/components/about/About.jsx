@@ -14,10 +14,7 @@ const About = (props) => {
         <div className="about__data">
           <Info />
 
-          <p className="about__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur, dicta?
-          </p>
+      
 
           <a download="" href={CV} className="button button-flex">
             Download CV

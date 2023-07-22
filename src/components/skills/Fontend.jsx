@@ -21,7 +21,7 @@ const Fontend = (props) => {
 
             <div>
               <h3 className="skills__name">CSS</h3>
-              <span className="skills__level">Advanced</span>
+              <span className="skills__level">Intermeidate</span>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ const Fontend = (props) => {
             <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">Bootstrap</h3>
+              <h3 className="skills__name">Ant Design</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>

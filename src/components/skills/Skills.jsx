@@ -10,7 +10,6 @@ const Skills = props => {
 
             <div className="skills__container container grid">
                 <Fontend />
-                <Fontend />
             </div>
 
         </section>
