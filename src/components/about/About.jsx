@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import AboutImg from "../../assets/img/duy.jpg";
-import CV from "../../assets/img/John-Cv.pdf";
+import CV from "../../assets/img/mycv.pdf";
 import Info from "./Info";
 const About = (props) => {
   return (
@@ -13,8 +13,6 @@ const About = (props) => {
 
         <div className="about__data">
           <Info />
-
-      
 
           <a download="" href={CV} className="button button-flex">
             Download CV
