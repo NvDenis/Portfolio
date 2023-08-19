@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import AboutImg from "../../assets/img/duy.jpg";
-import CV from "../../assets/img/Nguyen-Van-Duy-TopCV.vn-100823.142420.pdf";
+import CV from "../../assets/img/NVD_CV.pdf";
 import Info from "./Info";
 const About = (props) => {
   return (
