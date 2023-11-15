@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../../HookCustomize/useOnScreen";
 
 
-const About = (props) => {
+const About = () => {
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);
   const [hasAnimated, setHasAnimated] = useState(false);
