@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
 import useOnScreen from "../../HookCustomize/useOnScreen";
 
+
 const About = (props) => {
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);
