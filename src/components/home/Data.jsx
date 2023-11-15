@@ -1,14 +1,36 @@
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 import Typewriter from "typewriter-effect";
+import useOnScreen from '../../HookCustomize/useOnScreen'
+import { motion } from 'framer-motion';
 
 const Data = (props) => {
   new Typewriter("#typewriter", {
     strings: ["Hello", "World"],
     autoStart: true,
   });
+
+  const ref = useRef(null);
+  const onScreen = useOnScreen(ref);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (onScreen && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [hasAnimated, onScreen]);
+
+
+
   return (
     <>
       <div className="home__data">
+        <motion.div
+          ref={ref}
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: hasAnimated ? 0 : 100, opacity: hasAnimated ? 1 : 0 }}
+          transition={{ duration: 2.5 }}
+        >
+          
         <h1 className="home__title">
           Van Duy
           <svg
@@ -61,13 +83,15 @@ const Data = (props) => {
             ></path>
           </svg>
         </h1>
+        </motion.div>
+
 
         <h3 className="home__subtitle">FE Developer</h3>
 
         <p className="home__description ">
           <Typewriter
             options={{
-              strings: ["I'm a Web Developer", "I love to develop"],
+              strings: ["I'm a Web Developer", "I love to code"],
               autoStart: true,
               loop: true,
               skipAddStyles: false,

@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./footer.css";
+import useOnScreen from "../../HookCustomize/useOnScreen";
+import { motion } from 'framer-motion';
+
 
 const Footer = (props) => {
+  const ref = useRef(null);
+  const onScreen = useOnScreen(ref);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (onScreen && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [hasAnimated, onScreen]);
+
   return (
     <footer className="footer">
       <div className="footer__container container">
-        <h1 className="footer__title">DUY</h1>
+        <motion.div
+          ref={ref}
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: hasAnimated ? 0 : 100, opacity: hasAnimated ? 1 : 0 }}
+          transition={{ duration: 1.5 }}
+        >
+          <h1 className="footer__title">DUY</h1>
+        </motion.div>
+
 
         <ul className="footer__list">
           <li>

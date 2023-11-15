@@ -14,6 +14,7 @@
     "@emailjs/browser": "^3.11.0",
     "@iconscout/unicons": "^4.0.8",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^10.16.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typewriter-effect": "^2.20.1"

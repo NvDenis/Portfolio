@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./contact.css";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from 'framer-motion';
+import useOnScreen from "../../HookCustomize/useOnScreen";
+
 
 const Contact = (props) => {
+  const ref = useRef(null);
+  const onScreen = useOnScreen(ref);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (onScreen && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [hasAnimated, onScreen]);
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -20,8 +33,16 @@ const Contact = (props) => {
   };
   return (
     <section className="contact section" id="contact">
-      <h2 className="section__title">Get in touch</h2>
-      <span className="section__subtitle">Contact Me</span>
+      <motion.div
+        ref={ref}
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: hasAnimated ? 0 : 100, opacity: hasAnimated ? 1 : 0 }}
+        transition={{ duration: 1.5 }}
+      >
+
+        <h2 className="section__title">Get in touch</h2>
+        <span className="section__subtitle">Contact Me</span>
+      </motion.div>
 
       <div className="contact__container container grid">
         <div className="contact__content">
