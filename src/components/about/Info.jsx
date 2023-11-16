@@ -1,5 +1,5 @@
 
-const Info = (props) => {
+const Info = () => {
   return (
     <div className="about__info grid">
       <div className="about__box">

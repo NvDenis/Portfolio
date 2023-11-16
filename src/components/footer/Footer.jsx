@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./footer.css";
 import useOnScreen from "../../HookCustomize/useOnScreen";
 import { motion } from 'framer-motion';
 
 
-const Footer = (props) => {
+const Footer = () => {
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -53,6 +53,7 @@ const Footer = (props) => {
             href="https://www.instagram.com/diinguyenit/"
             className="home__social-icon"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="uil uil-instagram-alt"></i>
           </a>
@@ -60,6 +61,7 @@ const Footer = (props) => {
             href="https://www.facebook.com/master.duy.520"
             className="home__social-icon"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="uil uil-facebook"></i>
           </a>
@@ -67,6 +69,7 @@ const Footer = (props) => {
             href="https://github.com/NvDenis"
             className="home__social-icon"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="uil uil-github"></i>
           </a>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./contact.css";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import useOnScreen from "../../HookCustomize/useOnScreen";
 
 
-const Contact = (props) => {
+const Contact = () => {
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);
   const [hasAnimated, setHasAnimated] = useState(false);

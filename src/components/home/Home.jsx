@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import "./home.css";
 import Social from "./Social";
 import Data from "./Data";
@@ -6,7 +6,7 @@ import ScrollDown from "./ScrollDown";
 import useOnScreen from "../../HookCustomize/useOnScreen";
 import { motion } from 'framer-motion';
 
-const Home = (props) => {
+const Home = () => {
 
   const ref = useRef(null);
   const onScreen = useOnScreen(ref);

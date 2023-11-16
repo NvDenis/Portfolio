@@ -1,6 +1,5 @@
-import React from "react";
 
-const Fontend = (props) => {
+const Fontend = () => {
   return (
     <div className="skills__content">
       <h3 className="skills__title">Fontend developer</h3>

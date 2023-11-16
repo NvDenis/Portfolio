@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import useOnScreen from '../../HookCustomize/useOnScreen'
 import { motion } from 'framer-motion';
 
-const Data = (props) => {
+const Data = () => {
   new Typewriter("#typewriter", {
     strings: ["Hello", "World"],
     autoStart: true,

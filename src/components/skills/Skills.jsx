@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import useOnScreen from '../../HookCustomize/useOnScreen';
 
 
-const Skills = props => {
+const Skills = () => {
     const ref = useRef(null);
     const onScreen = useOnScreen(ref);
     const [hasAnimated, setHasAnimated] = useState(false);

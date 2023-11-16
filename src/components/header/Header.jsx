@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./header.css";
 
-const Header = (props) => {
+const Header = () => {
   // ========== change background header ===========
   window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
