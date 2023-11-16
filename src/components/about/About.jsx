@@ -4,7 +4,7 @@ import CV from "../../assets/img/mycv.pdf";
 import Info from "./Info";
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
-import useOnScreen from "../../HookCustomize/useOnScreen";
+import useOnScreen from "../../HookCustomize/useonscreen";
 
 
 const About = () => {
@@ -17,6 +17,7 @@ const About = () => {
       setHasAnimated(true);
     }
   }, [hasAnimated, onScreen]);
+
   return (
     <section className="about section" id="about">
       <motion.div
