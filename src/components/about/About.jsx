@@ -2,34 +2,18 @@ import "./about.css";
 import AboutImg from "../../assets/img/duy.jpg";
 import CV from "../../assets/img/mycv.pdf";
 import Info from "./Info";
-import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from "react";
-import useOnScreen from "../HookCustomize/useOnScreen";
-
+import { Fade } from "react-awesome-reveal";
 
 const About = () => {
-  const ref = useRef(null);
-  const onScreen = useOnScreen(ref);
-  const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    if (onScreen && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [hasAnimated, onScreen]);
 
   return (
     <section className="about section" id="about">
-      <motion.div
-        ref={ref}
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: hasAnimated ? 0 : 100, opacity: hasAnimated ? 1 : 0 }}
-        transition={{ duration: 1.5 }}
-      >
+      <Fade   duration={2000} fraction={0} triggerOnce direction="up">
         <h2 className="section__title">About Me</h2>
         <span className="section__subtitle">My introduction</span>
+      </Fade>
 
-      </motion.div>
       <div className="about__container container grid">
         <img src={AboutImg} alt="" className="about__img" />
 

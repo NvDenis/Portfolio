@@ -1,48 +1,52 @@
-import  { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import "./contact.css";
-import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from 'framer-motion';
-import useOnScreen from "../../HookCustomize/useOnScreen";
+import { Fade } from "react-awesome-reveal";
+import { toast } from "react-toastify";
+
 
 
 const Contact = () => {
-  const ref = useRef(null);
-  const onScreen = useOnScreen(ref);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (onScreen && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [hasAnimated, onScreen]);
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    project: '',
+  })
 
   const form = useRef();
 
+  const handleOnchange = (e) => {
+    const { name, value } = e;
+
+    setData({
+      [name]: value
+    })
+  }
+
   const sendEmail = (e) => {
     e.preventDefault();
+    if (data.name !== '' && data.email !== '' && data.project !== '') {
+      emailjs.sendForm(
+        "service_s2z4fde",
+        "template_r2nijsw",
+        form.current,
+        "jEDuc6DZ6HM7CevLY"
+      );
+      e.target.reset();
 
-    emailjs.sendForm(
-      "service_s2z4fde",
-      "template_r2nijsw",
-      form.current,
-      "jEDuc6DZ6HM7CevLY"
-    );
+    } else {
+      toast.error('Vui lòng nhập đầy đủ thông tin!')
+    }
 
-    e.target.reset();
+
   };
   return (
     <section className="contact section" id="contact">
-      <motion.div
-        ref={ref}
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: hasAnimated ? 0 : 100, opacity: hasAnimated ? 1 : 0 }}
-        transition={{ duration: 1.5 }}
-      >
 
+      <Fade duration={2000} fraction={0} triggerOnce direction="up">
         <h2 className="section__title">Get in touch</h2>
         <span className="section__subtitle">Contact Me</span>
-      </motion.div>
+      </Fade>
 
       <div className="contact__container container grid">
         <div className="contact__content">
@@ -95,6 +99,7 @@ const Contact = () => {
                 name="name"
                 className="contact__form-input"
                 placeholder="Insert your name"
+                onChange={handleOnchange}
               />
             </div>
 
@@ -105,6 +110,7 @@ const Contact = () => {
                 name="email"
                 className="contact__form-input"
                 placeholder="Insert your email"
+                onChange={handleOnchange}
               />
             </div>
 
@@ -117,6 +123,7 @@ const Contact = () => {
                 rows="10"
                 className="contact__form-input"
                 placeholder="Write your project "
+                onChange={handleOnchange}
               ></textarea>
             </div>
 

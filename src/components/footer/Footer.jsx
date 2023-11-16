@@ -1,31 +1,18 @@
-import { useEffect, useRef, useState } from "react";
 import "./footer.css";
-import useOnScreen from "../../HookCustomize/useOnScreen";
-import { motion } from 'framer-motion';
+import { Fade } from "react-awesome-reveal";
 
 
 const Footer = () => {
-  const ref = useRef(null);
-  const onScreen = useOnScreen(ref);
-  const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    if (onScreen && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [hasAnimated, onScreen]);
 
   return (
     <footer className="footer">
+
       <div className="footer__container container">
-        <motion.div
-          ref={ref}
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: hasAnimated ? 0 : 100, opacity: hasAnimated ? 1 : 0 }}
-          transition={{ duration: 1.5 }}
-        >
+        <Fade duration={2000} fraction={0} triggerOnce direction="up">
+
           <h1 className="footer__title">DUY</h1>
-        </motion.div>
+        </Fade>
 
 
         <ul className="footer__list">
@@ -78,6 +65,7 @@ const Footer = () => {
           &#169; VDUYIT. All rights reserved
         </span>
       </div>
+
     </footer>
   );
 };
