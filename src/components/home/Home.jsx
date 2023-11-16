@@ -19,6 +19,7 @@ const Home = () => {
           </Fade>
 
 
+
           <Data />
         </div>
 
