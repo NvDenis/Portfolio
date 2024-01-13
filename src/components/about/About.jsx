@@ -1,6 +1,6 @@
 import "./about.css";
 import AboutImg from "../../assets/img/duy.jpg";
-import CV from "../../assets/img/Nguyen-Van-Duy-TopCV.vn-301123.95954.pdf";
+import CV from "../../assets/img/Nguyen-Van-Duy-TopCV.vn-130124.230106.pdf";
 import Info from "./Info";
 import { Fade } from "react-awesome-reveal";
 
