@@ -5,24 +5,67 @@
 }
 
 .techs p {
-  border-right: 2px solid rgba(45,46,50,.5);
+  border-right: 2px solid rgba(45, 46, 50, .5);
   color: #2d2e32;
-  font-family: Mulish,sans-serif;
+  font-family: Mulish, sans-serif;
   font-weight: 600;
   margin-right: 7rem;
   padding-right: 2rem;
   font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+.logos {
+  width: 100%;
 }
 
 .techs ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
   list-style: none;
+  position: relative;
+  height: 48px;
+  width: calc(6.5rem * 4);
+  margin-inline: auto;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0));
 }
 
 .techs ul li {
   cursor: pointer;
+  position: absolute;
+  left: 80%;
+  width: 6.5rem;
+  height: 48px;
+  left: 100%;
+  animation-name: scrollLeft;
+  animation-timing-function: linear;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -6.5rem;
+  }
+}
+
+.logo-1 {
+  animation-delay: calc(20s / 4 * (4 - 1) * -1);
+}
+
+.logo-2 {
+  animation-delay: calc(20s / 4 * (4 - 2) * -1);
+}
+
+.logo-3 {
+  animation-delay: calc(20s / 4 * (4 - 3) * -1);
+}
+
+.logo-4 {
+  animation-delay: calc(20s / 4 * (4 - 4) * -1);
 }
 
 .techs ul li img {
@@ -40,15 +83,18 @@
   }
 
   .techs p {
-    border-bottom: 2px solid rgba(45,46,50,.5);
+    border-bottom: 2px solid rgba(45, 46, 50, .5);
     border-right: none;
     margin-bottom: 3rem;
     margin-right: 0;
     padding-bottom: 1rem;
     padding-right: 0;
   }
+
   .techs ul {
     justify-content: center;
+    width: max(calc(3.5rem * 4), 100%);
+
   }
 
 }
