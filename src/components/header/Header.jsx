@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "./header.css";
 
 const Header = () => {
@@ -42,6 +42,20 @@ const Header = () => {
                 }
               >
                 <i className="uil uil-user nav__icon"></i> About
+              </a>
+            </li>
+
+            <li className="nav__item">
+              <a
+                href="#experience"
+                onClick={() => setActiveNav("#experience")}
+                className={
+                  activeNav === "#experience"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+              >
+                <i className="uil uil-briefcase nav__icon"></i> Experience
               </a>
             </li>
 

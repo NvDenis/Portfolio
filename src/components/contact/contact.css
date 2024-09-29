@@ -1,3 +1,8 @@
+
+.contact {
+    background-color: #f9f9f9;   
+}
+
 .contact__container {
     grid-template-columns: repeat(2, max-content);
     justify-content      : center;
@@ -106,6 +111,31 @@
 
 .contact__form-area textarea {
     resize: none;
+}
+
+.contact__container {
+    min-width: 20rem;
+    max-width: 30rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem auto;
+    border: 2px solid #a3a3a3a3;
+    border-radius: 30px;
+    padding: 1rem;
+
+}
+
+.contact__group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.contact__group img {
+    width: 2rem;
+    height: 2rem;
 }
 
 /* ============== BREAKPOINTS ============= */

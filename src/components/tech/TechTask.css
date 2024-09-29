@@ -73,10 +73,6 @@
   width: 6.5rem;
 }
 
-.techs ul li img:hover {
-  transform: translateY(-10px)
-}
-
 @media screen and (max-width: 992px) {
   .techs {
     flex-direction: column;

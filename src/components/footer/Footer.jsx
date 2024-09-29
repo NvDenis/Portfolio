@@ -1,24 +1,28 @@
 import "./footer.css";
 import { Fade } from "react-awesome-reveal";
 
-
 const Footer = () => {
-
-
   return (
     <footer className="footer">
-
       <div className="footer__container container">
         <Fade duration={2000} fraction={0} triggerOnce direction="up">
-
           <h1 className="footer__title">DUY</h1>
         </Fade>
 
-
         <ul className="footer__list">
+          <li>
+            <a href="#home" className="footer__link">
+              Home
+            </a>
+          </li>
           <li>
             <a href="#about" className="footer__link">
               About
+            </a>
+          </li>
+          <li>
+            <a href="#experience" className="footer__link">
+              Experience
             </a>
           </li>
 
@@ -65,7 +69,6 @@ const Footer = () => {
           &#169; VDUYIT. All rights reserved
         </span>
       </div>
-
     </footer>
   );
 };

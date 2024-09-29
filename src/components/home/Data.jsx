@@ -2,18 +2,15 @@ import Typewriter from "typewriter-effect";
 import { Fade } from "react-awesome-reveal";
 import Social from "./Social";
 
-
 const Data = () => {
   new Typewriter("#typewriter", {
     strings: ["Hello", "World"],
     autoStart: true,
   });
 
-
   return (
     <>
       <div className="home__data">
-
         <Fade duration={2000} fraction={0} triggerOnce direction="up">
           <h1 className="home__title">
             Front-End React Developer
@@ -68,10 +65,9 @@ const Data = () => {
             </svg>
           </h1>
 
-
           {/* <h3 className="home__subtitle">FE Developer</h3> */}
 
-          <p className="home__description ">
+          <div className="home__description ">
             <Typewriter
               options={{
                 strings: ["I'm a Web Developer", "I love to code"],
@@ -80,7 +76,7 @@ const Data = () => {
                 skipAddStyles: false,
               }}
             />
-          </p>
+          </div>
 
           <Social />
 
@@ -103,7 +99,6 @@ const Data = () => {
                 fill="let(--container-color)"
               ></path>
             </svg> */}
-
             {/* <svg
               width="24"
               height="24"
@@ -153,7 +148,6 @@ const Data = () => {
                 fill="#EBA352"
               ></path>
             </svg> */}
-
             {/* <svg
               className="button__icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +173,7 @@ const Data = () => {
                 fill="#000"
               ></path>
             </svg> */}
-                {/* <svg
+            {/* <svg
                 className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -204,11 +198,9 @@ const Data = () => {
                   fill="var(--container-color)"
                 ></path>
               </svg> */}
-              <span className="button__icon">👇</span>
+            <span className="button__icon">👇</span>
           </a>
-
         </Fade>
-
       </div>
     </>
   );
