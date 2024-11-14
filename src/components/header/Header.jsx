@@ -1,103 +1,172 @@
-import { useState } from "react";
+import dark from "../../assets/img/moon.svg";
+import light from "../../assets/img/light.svg";
+import en from "../../assets/img/en.svg";
+import vi from "../../assets/img/vi.svg";
+import { useContext, useEffect, useState } from "react";
 import "./header.css";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
+import { CiDark } from "react-icons/ci";
+import { CiLight } from "react-icons/ci";
+import { IoMenuSharp } from "react-icons/io5";
+import Drawer from "../../ui/Drawer";
+
+const nav = [
+  {
+    label: "trang_chu",
+    href: "#home",
+  },
+  {
+    label: "ve_tac_gia",
+    href: "#about",
+  },
+  {
+    label: "kinh_nghiem",
+    href: "#experience",
+  },
+  {
+    label: "du_an",
+    href: "#projects",
+  },
+  {
+    label: "lien_he",
+    href: "#contact",
+  },
+];
+
+const languages = [
+  {
+    label: "tieng_viet",
+    value: "vi",
+  },
+  {
+    label: "tieng_anh",
+    value: "en",
+  },
+];
 
 const Header = () => {
-  // ========== change background header ===========
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
-    if (this.scrollY >= 80) header.classList.add("scroll-header");
-    else header.classList.remove("scroll-header");
-  });
-
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const [activeNav, setActiveNav] = useState("#home");
-
+  const [sticky, setSticky] = useState(false);
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "vi"
+  );
   const [toggle, setToggle] = useState(false);
+  const [toggleLanguage, setToggleLanguage] = useState(false);
+
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      setSticky(window.scrollY > 50);
+    });
+  }, []);
+
+  const changeLanguage = (lang) => {
+    console.log("changeLanguage", lang);
+
+    i18n.changeLanguage(lang);
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+  };
+
   return (
-    <header className="header">
+    <header className={`header ${sticky && "sticky-header "}`}>
+      <div className="overlay"></div>
       <nav className="nav container">
-        <a href="index.html" className="nav__logo">
-          Duy.dev
-        </a>
-
-        <div className={toggle ? "nav__menu show-menu" : "nav__menu"}>
-          <ul className="nav__list grid">
-            <li className="nav__item">
-              <a
-                href="#home"
-                onClick={() => setActiveNav("#home")}
-                className={
-                  activeNav === "#home" ? "nav__link active-link" : "nav__link"
-                }
-              >
-                <i className="uil uil-estate nav__icon"></i> Home
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a
-                href="#about"
-                onClick={() => setActiveNav("#about")}
-                className={
-                  activeNav === "#about" ? "nav__link active-link" : "nav__link"
-                }
-              >
-                <i className="uil uil-user nav__icon"></i> About
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a
-                href="#experience"
-                onClick={() => setActiveNav("#experience")}
-                className={
-                  activeNav === "#experience"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-              >
-                <i className="uil uil-briefcase nav__icon"></i> Experience
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a
-                href="#projects"
-                onClick={() => setActiveNav("#projects")}
-                className={
-                  activeNav === "#projects"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-              >
-                <i className="uil uil-file-alt nav__icon"></i> Projects
-              </a>
-            </li>
-
-            <li className="nav__item">
-              <a
-                href="#contact"
-                onClick={() => setActiveNav("#contact")}
-                className={
-                  activeNav === "#contact"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-              >
-                <i className="uil uil-message nav__icon"></i> Contact
-              </a>
-            </li>
+        <div className="flex items-center gap-4">
+          <a href="#home" className="nav__logo">
+            Duy.dev
+          </a>
+          <ul className="nav__list hidden lg:flex">
+            {nav.map((item, index) => {
+              return (
+                <li className="nav__item" key={index}>
+                  <a
+                    href={item.href}
+                    onClick={() => setActiveNav(item.href)}
+                    className={
+                      activeNav === item.href
+                        ? "nav__link active-link"
+                        : "nav__link"
+                    }
+                  >
+                    {t(item.label)}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
+        </div>
+        <div className="items-center gap-4 hidden lg:flex">
+          <div onClick={() => toggleTheme(theme == "light" ? "dark" : "light")}>
+            {theme == "light" ? <CiLight /> : <CiDark />}
+          </div>
+          <div className="relative">
+            <img
+              onClick={() => setToggleLanguage(true)}
+              className="w-5 h-5 cursor-pointer"
+              src={language == "en" ? en : vi}
+              alt=""
+            />
 
-          <i
-            className="uil uil-times nav__close"
-            onClick={() => setToggle(!toggle)}
-          ></i>
+            {toggleLanguage && (
+              <div>
+                <div
+                  className="fixed inset-0 z-100"
+                  onClick={() => setToggleLanguage(false)}
+                ></div>
+                <div className="absolute z-[100] top-10 right-0 bg-white p-2 shadow-lg rounded-lg">
+                  {languages.map((item, index) => {
+                    return (
+                      <div
+                        key={index}
+                        onClick={() => changeLanguage(item.value)}
+                        className="flex items-center gap-2 cursor-pointer w-32"
+                      >
+                        <img
+                          className="w-5 h-5 cursor-pointer"
+                          src={item.value === "en" ? en : vi}
+                          alt=""
+                        />
+                        <span>{t(item.label)}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
-        <div className="nav__toggle" onClick={() => setToggle(!toggle)}>
-          <i className="uil uil-apps"></i>
+        <div onClick={() => setToggle(!toggle)} className="lg:hidden">
+          <IoMenuSharp />
         </div>
       </nav>
+
+      <Drawer isOpen={toggle} setIsOpen={setToggle}>
+        sdsdsdsdsd
+        <ul className="nav__list hidden lg:flex">
+          {nav.map((item, index) => {
+            return (
+              <li className="nav__item" key={index}>
+                <a
+                  href={item.href}
+                  onClick={() => setActiveNav(item.href)}
+                  className={
+                    activeNav === item.href
+                      ? "nav__link active-link"
+                      : "nav__link"
+                  }
+                >
+                  {t(item.label)}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </Drawer>
     </header>
   );
 };
