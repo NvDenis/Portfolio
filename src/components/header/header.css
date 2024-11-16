@@ -7,7 +7,7 @@
 }
 
 .sticky-header {
-  box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 40px var(--shadow-header-color);
 }
 
 .overlay {
@@ -46,5 +46,9 @@
 
 .nav__item:hover {
   color: var(--pink);
-  transition: all 0.3s linear;
+  transition: all 0.3s ease;
+}
+
+.active-link {
+  color: var(--pink);
 }

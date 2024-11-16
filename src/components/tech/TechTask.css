@@ -1,12 +1,11 @@
 .techs {
   align-items: center;
-  color: #767676;
   display: flex;
 }
 
 .techs p {
-  border-right: 2px solid rgba(45, 46, 50, .5);
-  color: #2d2e32;
+  border-right: 2px solid var(--border-color);
+  color: var(--title-color);
   font-family: Mulish, sans-serif;
   font-weight: 600;
   margin-right: 7rem;
@@ -17,80 +16,58 @@
 
 .logos {
   width: 100%;
-}
-
-.techs ul {
-  list-style: none;
-  position: relative;
-  height: 48px;
-  width: calc(6.5rem * 4);
-  margin-inline: auto;
+  height: var(--height);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 10% 90%,
+    transparent
+  );
   overflow: hidden;
-  mask-image: linear-gradient(to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 20%,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0));
 }
 
-.techs ul li {
-  cursor: pointer;
+.logos ul {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity) - 4) ;
+  position: relative;
+}
+
+.logos ul li {
+  width: var(--width);
+  height: var(--height);
   position: absolute;
-  left: 80%;
-  width: 6.5rem;
-  height: 48px;
   left: 100%;
-  animation-name: scrollLeft;
-  animation-timing-function: linear;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
+  animation: autoRun 17s linear infinite;
+  animation-delay: calc(((17s / var(--quantity)) * (var(--position) - 1)));
 }
 
-@keyframes scrollLeft {
-  to {
-    left: -6.5rem;
+.logos ul li img{ 
+  width: 100%;
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  } to {
+    left:  calc(var(--width) * -1);
   }
 }
 
-.logo-1 {
-  animation-delay: calc(20s / 4 * (4 - 1) * -1);
+.logos:hover  li {
+  animation-play-state: paused!important;
+  filter: grayscale(1);
 }
 
-.logo-2 {
-  animation-delay: calc(20s / 4 * (4 - 2) * -1);
+.logos li:hover {
+  filter: grayscale(0);
 }
 
-.logo-3 {
-  animation-delay: calc(20s / 4 * (4 - 3) * -1);
-}
-
-.logo-4 {
-  animation-delay: calc(20s / 4 * (4 - 4) * -1);
-}
-
-.techs ul li img {
-  transition: all .3s ease-in-out;
-  width: 6.5rem;
-}
-
-@media screen and (max-width: 992px) {
-  .techs {
-    flex-direction: column;
-  }
-
+@media screen and (max-width: 768px) {
   .techs p {
-    border-bottom: 2px solid rgba(45, 46, 50, .5);
-    border-right: none;
-    margin-bottom: 3rem;
-    margin-right: 0;
-    padding-bottom: 1rem;
-    padding-right: 0;
+    margin: 0;
+    border: none;
   }
-
-  .techs ul {
-    justify-content: center;
-    width: max(calc(3.5rem * 4), 100%);
-
-  }
-
+  
 }
+

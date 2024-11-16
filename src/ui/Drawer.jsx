@@ -1,12 +1,10 @@
 import "./Drawer.css";
 
 const Drawer = ({ isOpen, setIsOpen, children }) => {
-  console.log("isOpen", isOpen);
-
   return (
     <div
-      className={`fixed inset-0 h-screen w-screen z-10 opacity-0 duration-300 invisible ${
-        isOpen && "opacity-100 visible"
+      className={`fixed inset-0 duration-300 h-screen w-screen z-10  ${
+        isOpen ? "visible opacity-100" : "invisible opacity-0"
       }`}
     >
       <div
@@ -14,9 +12,9 @@ const Drawer = ({ isOpen, setIsOpen, children }) => {
         onClick={() => setIsOpen(false)}
       ></div>
       <div
-        className={`absolute z-20 top-0 right-0 h-screen w-64 drawer shadow-lg translate-x-full ${
-          isOpen && "translate-x-0"
-        }`}
+        className={`fixed z-20 top-0 duration-300 drawer  right-0 h-screen w-64  shadow-lg ${
+          isOpen ? "translate-x-[0]" : "translate-x-[100%]"
+        } `}
       >
         {children}
       </div>

@@ -1,9 +1,20 @@
 .home {
-  background-color: var(--even-background-color);
+  background-color: var(--body1-color);
+  min-height: 100vh;
+  background-image: url(../../assets/img/section.svg);
+  background-repeat: no-repeat;
 }
 
 .home__container {
   row-gap: 7rem;
+}
+
+.name {
+  color: var(--pink);
+}
+
+.home__description {
+  color: var(--green);
 }
 
 .flex {
@@ -28,16 +39,13 @@
 
 .home__social-icon {
   font-size: 1.25rem;
-  color: var(--title-color);
-}
-
-.home__social-icon:hover {
-  color: var(--title-color-dark);
 }
 
 .home__title {
-  font-size: var(--big-font-size);
+  color: var(--text-color);
+  font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
+  font-weight: var(--font-semi-bold);
 }
 
 .home__hand {
@@ -80,6 +88,42 @@
   box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
   justify-self: center;
   animation: profile__animate 5s ease-in-out infinite;
+}
+
+.wave {
+  animation: wave 1.5s linear infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0);
+  }
+
+  10% {
+    transform: rotate(-10deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  30% {
+    transform: rotate(-10deg);
+  }
+
+  40% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
 }
 
 @keyframes profile__animate {

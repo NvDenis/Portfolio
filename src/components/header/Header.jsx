@@ -1,7 +1,3 @@
-import dark from "../../assets/img/moon.svg";
-import light from "../../assets/img/light.svg";
-import en from "../../assets/img/en.svg";
-import vi from "../../assets/img/vi.svg";
 import { useContext, useEffect, useState } from "react";
 import "./header.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -10,6 +6,7 @@ import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { IoMenuSharp } from "react-icons/io5";
 import Drawer from "../../ui/Drawer";
+import ToggleLanguage from "./ToggleLanguage/ToggleLanguage";
 
 const nav = [
   {
@@ -34,17 +31,6 @@ const nav = [
   },
 ];
 
-const languages = [
-  {
-    label: "tieng_viet",
-    value: "vi",
-  },
-  {
-    label: "tieng_anh",
-    value: "en",
-  },
-];
-
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [activeNav, setActiveNav] = useState("#home");
@@ -59,21 +45,13 @@ const Header = () => {
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      setSticky(window.scrollY > 50);
+      setSticky(window.scrollY > 0);
     });
   }, []);
 
-  const changeLanguage = (lang) => {
-    console.log("changeLanguage", lang);
-
-    i18n.changeLanguage(lang);
-    setLanguage(lang);
-    localStorage.setItem("language", lang);
-  };
-
   return (
     <header className={`header ${sticky && "sticky-header "}`}>
-      <div className="overlay"></div>
+      {sticky && <div className="overlay"></div>}
       <nav className="nav container">
         <div className="flex items-center gap-4">
           <a href="#home" className="nav__logo">
@@ -103,41 +81,12 @@ const Header = () => {
           <div onClick={() => toggleTheme(theme == "light" ? "dark" : "light")}>
             {theme == "light" ? <CiLight /> : <CiDark />}
           </div>
-          <div className="relative">
-            <img
-              onClick={() => setToggleLanguage(true)}
-              className="w-5 h-5 cursor-pointer"
-              src={language == "en" ? en : vi}
-              alt=""
-            />
-
-            {toggleLanguage && (
-              <div>
-                <div
-                  className="fixed inset-0 z-100"
-                  onClick={() => setToggleLanguage(false)}
-                ></div>
-                <div className="absolute z-[100] top-10 right-0 bg-white p-2 shadow-lg rounded-lg">
-                  {languages.map((item, index) => {
-                    return (
-                      <div
-                        key={index}
-                        onClick={() => changeLanguage(item.value)}
-                        className="flex items-center gap-2 cursor-pointer w-32"
-                      >
-                        <img
-                          className="w-5 h-5 cursor-pointer"
-                          src={item.value === "en" ? en : vi}
-                          alt=""
-                        />
-                        <span>{t(item.label)}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
+          <ToggleLanguage
+            language={language}
+            toggleLanguage={toggleLanguage}
+            setToggleLanguage={setToggleLanguage}
+            setLanguage={setLanguage}
+          />
         </div>
 
         <div onClick={() => setToggle(!toggle)} className="lg:hidden">
@@ -146,8 +95,7 @@ const Header = () => {
       </nav>
 
       <Drawer isOpen={toggle} setIsOpen={setToggle}>
-        sdsdsdsdsd
-        <ul className="nav__list hidden lg:flex">
+        <ul className="nav__list flex-col items-start pt-10 px-4">
           {nav.map((item, index) => {
             return (
               <li className="nav__item" key={index}>
@@ -165,6 +113,23 @@ const Header = () => {
               </li>
             );
           })}
+
+          <li className="nav__item">
+            <div
+              onClick={() => toggleTheme(theme == "light" ? "dark" : "light")}
+            >
+              {theme == "light" ? <CiLight /> : <CiDark />}
+            </div>
+          </li>
+
+          <li className="nav__item">
+            <ToggleLanguage
+              language={language}
+              toggleLanguage={toggleLanguage}
+              setToggleLanguage={setToggleLanguage}
+              setLanguage={setLanguage}
+            />
+          </li>
         </ul>
       </Drawer>
     </header>

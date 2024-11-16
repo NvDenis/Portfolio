@@ -3,22 +3,39 @@
 
 [data-theme="dark"] {
   --text-color: white;
-  --body-color: black;
+  --body1-color: #0d1224;
+  --body2-color: #0d1224;
   --container-color: black;
   --header-text-color: black;
-  --even-background-color: black;
-  --pink: #ec4899;
+  --pink: hsl(330, 81%, 60%);
   --popup-background-color: #212529;
+  --popup-border-color: rgba(255, 255, 255, .15);
+  --green: #16f2b3;
+  --blue: #0d6efd;
+  --border-color: #f9f9f9;
+  --shadow-header-color: rgb(255, 255, 255, 0.1);
+  --title-section-color: #ec4899;
+  --box-background-color: #101123;
+  --box-border-color: rgba(27, 44, 104, .6274509804);
 }
 
 [data-theme="light"] {
   --text-color: black;
-  --body-color: white;
+  --body1-color: white;
+  --body2-color: #f9f9f9f9;
   --container-color: #fff;
   --header-text-color: white;
-  --even-background-color: #f9f9f9;
   --pink: #ec4899;
   --popup-background-color: white;
+  --popup-border-color: rgba(0, 0, 0, .175);
+  --green: #0d6efd;
+  --blue: #0d6efd;
+  --border-color: black;
+  --shadow-header-color: rgba(0, 0, 0, 0.1);
+  --title-section-color: #0d6efd;
+  --box-background-color: white;
+  --box-border-color: rgba(0, 0, 0, .175);
+
 }
 
 #root {
@@ -27,9 +44,9 @@
   /* ========== Colors ==========*/
   --hue: 0;
   --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 46%);
+  /* --title-color: hsl(var(--hue), var(--sat), 20%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%); */
+  /* --text-color: hsl(var(--hue), var(--sat), 46%); */
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
 
@@ -140,7 +157,7 @@ img {
 
 .section__title {
   font-size: var(--h1-font-size);
-  color: var(--title-color);
+  color: var(--title-section-color);
 }
 
 .section__subtitle {
@@ -169,7 +186,8 @@ img {
 /* =============== BUTTONS ============= */
 .button {
   display: inline-block;
-  background-color: var(--title-color);
+  /* background-color: var(--title-color); */
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
   color: var(--container-color);
   padding: 1.25rem 2rem;
   border-radius: 1rem;
@@ -224,6 +242,4 @@ img {
   :root {
     --big-font-size: 2.25rem;
   }
-
-
 }

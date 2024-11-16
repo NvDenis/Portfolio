@@ -1,0 +1,8 @@
+.popup {
+  background-color: var(--popup-background-color);
+  border: 1px solid var(--popup-border-color);
+}
+
+.popup span{
+  color: var(--text-color);
+}
