@@ -36,7 +36,7 @@ const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
   const [sticky, setSticky] = useState(false);
   const [language, setLanguage] = useState(
-    localStorage.getItem("language") || "vi"
+    localStorage.getItem("language") || "en"
   );
   const [toggle, setToggle] = useState(false);
   const [toggleLanguage, setToggleLanguage] = useState(false);
