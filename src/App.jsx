@@ -2,7 +2,7 @@ import "./App.css";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Experience from "./components/Experience/Experience";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footera/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import ScrollUp from "./components/scrollup/ScrollUp";
