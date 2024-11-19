@@ -4,7 +4,7 @@ import checkmark from "../../assets/img/checkmark.png";
 
 const Experience = () => {
   return (
-    <div className="section " id="experience">
+    <div className="section" id="experience">
       <div className="container">
         <Fade duration={2000} fraction={0} triggerOnce direction="up">
           <h2 className="section__title">Experience</h2>

@@ -1,31 +1,34 @@
+const socials = [
+  {
+    icon: "uil uil-instagram-alt",
+    href: "https://www.instagram.com/diinguyenit/",
+  },
+  {
+    icon: "uil uil-facebook",
+    href: "https://www.facebook.com/master.duy.520",
+  },
+  {
+    icon: "uil uil-github",
+    href: "https://github.com/NvDenis",
+  },
+];
 
 const Social = () => {
   return (
     <div className="home__social">
-      <a
-        href="https://www.instagram.com/diinguyenit/"
-        className="home__social-icon"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <i className="uil uil-instagram-alt"></i>
-      </a>
-      <a
-        href="https://www.facebook.com/master.duy.520"
-        className="home__social-icon"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <i className="uil uil-facebook"></i>
-      </a>
-      <a
-        href="https://github.com/NvDenis"
-        className="home__social-icon"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <i className="uil uil-github"></i>
-      </a>
+      {socials.map((item) => {
+        return (
+          <a
+            key={item.icon}
+            href={item.href}
+            className="home__social-icon"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className={item.icon}></i>
+          </a>
+        );
+      })}
     </div>
   );
 };

@@ -10,10 +10,6 @@ import ToggleLanguage from "./ToggleLanguage/ToggleLanguage";
 
 const nav = [
   {
-    label: "trang_chu",
-    href: "#home",
-  },
-  {
     label: "ve_tac_gia",
     href: "#about",
   },

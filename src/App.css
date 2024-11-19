@@ -9,14 +9,14 @@
   --header-text-color: black;
   --pink: hsl(330, 81%, 60%);
   --popup-background-color: #212529;
-  --popup-border-color: rgba(255, 255, 255, .15);
+  --popup-border-color: rgba(255, 255, 255, 0.15);
   --green: #16f2b3;
   --blue: #0d6efd;
   --border-color: #f9f9f9;
   --shadow-header-color: rgb(255, 255, 255, 0.1);
   --title-section-color: #ec4899;
   --box-background-color: #101123;
-  --box-border-color: rgba(27, 44, 104, .6274509804);
+  --box-border-color: rgba(27, 44, 104, 0.6274509804);
 }
 
 [data-theme="light"] {
@@ -27,15 +27,14 @@
   --header-text-color: white;
   --pink: #ec4899;
   --popup-background-color: white;
-  --popup-border-color: rgba(0, 0, 0, .175);
+  --popup-border-color: rgba(0, 0, 0, 0.175);
   --green: #0d6efd;
   --blue: #0d6efd;
   --border-color: black;
   --shadow-header-color: rgba(0, 0, 0, 0.1);
   --title-section-color: #0d6efd;
   --box-background-color: white;
-  --box-border-color: rgba(0, 0, 0, .175);
-
+  --box-border-color: rgba(0, 0, 0, 0.175);
 }
 
 #root {
@@ -186,12 +185,16 @@ img {
 /* =============== BUTTONS ============= */
 .button {
   display: inline-block;
-  /* background-color: var(--title-color); */
-  background: linear-gradient(to right, #ec4899, #8b5cf6);
-  color: var(--container-color);
-  padding: 1.25rem 2rem;
-  border-radius: 1rem;
+  color: var(--text-color);
+  border-radius: 30px;
   font-weight: var(--font-medium);
+  padding: 0.8rem 1.8rem;
+  border: 1px solid var(--popup-border-color);
+}
+
+.button.primary {
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
+  color: white;
 }
 
 .button:hover {

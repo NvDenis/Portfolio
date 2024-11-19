@@ -6,15 +6,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__container container">
         <Fade duration={2000} fraction={0} triggerOnce direction="up">
-          <h1 className="footer__title">DUY</h1>
+          <a href="#home" className="footer__title block">
+            DUY
+          </a>
         </Fade>
 
         <ul className="footer__list">
-          <li>
-            <a href="#home" className="footer__link">
-              Home
-            </a>
-          </li>
           <li>
             <a href="#about" className="footer__link">
               About
@@ -39,7 +36,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        <div className="footer__social">
+        {/* <div className="footer__social">
           <a
             href="https://www.instagram.com/diinguyenit/"
             className="home__social-icon"
@@ -64,7 +61,7 @@ const Footer = () => {
           >
             <i className="uil uil-github"></i>
           </a>
-        </div>
+        </div> */}
         <span className="footer__coppy">
           &#169; VDUYIT. All rights reserved
         </span>

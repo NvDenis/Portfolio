@@ -1,53 +1,48 @@
 #experience {
-    background-color: #f9f9f9f9;
-    min-height: 100vh;
+  background-color: var(--body1-color);
+  min-height: 100vh;
 }
 
-
-
 .experience__container {
-    display: flex;
-     gap: 3rem;
-     flex-wrap: wrap;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .experience__frontend {
-    border: 2px solid #a3a3a3a3;
-    border-radius: 1rem;
-    padding: 1rem;
-    flex: 1 0 300px;
+  border: 2px solid #a3a3a3a3;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1 0 300px;
 }
 
 .experience__frontend h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: grey;
-    font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem;
-    margin-block: 1rem;
-   
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-block: 1rem;
 }
 
 .tech-list__item {
-    width: 150px;
-   
+  width: 150px;
 }
 
 .tech-list__item div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .tech-list__item img {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .tech-list__item span {

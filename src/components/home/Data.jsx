@@ -4,6 +4,7 @@ import Social from "./Social";
 import { useTranslation } from "react-i18next";
 import "./home.css";
 import CV from "../../assets/img/Nguyen-Van-Duy-TopCV.vn-130124.230106.pdf";
+import { FaDownload } from "react-icons/fa6";
 
 const Data = () => {
   new Typewriter("#typewriter", {
@@ -37,10 +38,16 @@ const Data = () => {
 
           <Social />
 
-          <div className="flex items-center gap-4">
+          <div className="flex mt-8 justify-center lg:justify-start items-center gap-4">
             <a href="#contact" className="button button--flex">
-              {t("xem_cv")}
+              {t("lien_he")}
               <span className="button__icon">👇</span>
+            </a>
+            <a href="#contact" className="button button--flex primary">
+              {t("xem_cv")}
+              <span className="button__icon">
+                <FaDownload />
+              </span>
             </a>
           </div>
         </Fade>

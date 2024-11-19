@@ -1,6 +1,6 @@
 
 .contact {
-    background-color: #f9f9f9;   
+    background-color: var(--body1-color);   
 }
 
 .contact__container {

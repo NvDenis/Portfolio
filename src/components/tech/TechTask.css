@@ -17,19 +17,14 @@
 .logos {
   width: 100%;
   height: var(--height);
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 10% 90%,
-    transparent
-  );
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
   overflow: hidden;
 }
 
 .logos ul {
   display: flex;
   width: 100%;
-  min-width: calc(var(--width) * var(--quantity) - 4) ;
+  min-width: calc(var(--width) * var(--quantity) - 4);
   position: relative;
 }
 
@@ -42,20 +37,21 @@
   animation-delay: calc(((17s / var(--quantity)) * (var(--position) - 1)));
 }
 
-.logos ul li img{ 
+.logos ul li img {
   width: 100%;
 }
 
 @keyframes autoRun {
   from {
     left: 100%;
-  } to {
-    left:  calc(var(--width) * -1);
+  }
+  to {
+    left: calc(var(--width) * -1);
   }
 }
 
-.logos:hover  li {
-  animation-play-state: paused!important;
+.logos:hover li {
+  animation-play-state: paused !important;
   filter: grayscale(1);
 }
 
@@ -67,7 +63,6 @@
   .techs p {
     margin: 0;
     border: none;
+    padding: 0;
   }
-  
 }
-

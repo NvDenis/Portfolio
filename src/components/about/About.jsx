@@ -2,13 +2,17 @@ import "./about.css";
 import Info from "./Info";
 import { Fade } from "react-awesome-reveal";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <section className="about section" id="about">
       <Fade duration={2000} fraction={0} triggerOnce direction="up">
-        <h2 className="section__title">About Me</h2>
-        <span className="section__subtitle">My introduction</span>
+        <h2 className="section__title">{t("kinh_nghiem")}</h2>
+        <span className="section__subtitle">
+          {t("kham_pha_kinh_nghiem_cua_toi")}
+        </span>
       </Fade>
 
       <Fade duration={2000} fraction={0} triggerOnce direction="up">

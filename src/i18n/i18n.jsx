@@ -15,6 +15,11 @@ const resources = {
       xem_cv: "Xem CV",
       kinh_nghiem: "Kinh nghiệm",
       lien_he: "Liên hệ",
+      ki_nang: "Kỹ năng",
+      lien_he_voi_toi_qua: "Liên hệ với tôi qua",
+      lien_lac: "Liên lạc",
+      gioi_thieu: "Giới thiệu về tôi",
+      kham_pha_kinh_nghiem_cua_toi: "Khám phá kinh nghiệm của tôi",
     },
   },
   en: {
@@ -30,6 +35,11 @@ const resources = {
       xem_cv: "Get resume",
       kinh_nghiem: "Experience",
       lien_he: "Contact",
+      ki_nang: "Skills",
+      lien_he_voi_toi_qua: "Find me on",
+      lien_lac: "Get in Touch",
+      gioi_thieu: "My introduction",
+      kham_pha_kinh_nghiem_cua_toi: "Explore my",
     },
   },
 };

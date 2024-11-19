@@ -22,10 +22,10 @@
 }
 
 .home__content {
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   padding-top: 3.5rem;
-  column-gap: 2rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .home__social {
@@ -39,6 +39,10 @@
 
 .home__social-icon {
   font-size: 1.25rem;
+}
+
+.bi-instagram {
+  color: var(--green);
 }
 
 .home__title {
@@ -88,6 +92,10 @@
   box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
   justify-self: center;
   animation: profile__animate 5s ease-in-out infinite;
+}
+
+.button--flex:hover {
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
 }
 
 .wave {
@@ -174,9 +182,9 @@
 /* for large devices */
 @media screen and (max-width: 992px) {
   .home__content {
-    grid-template-columns: 500px;
     margin: 0 auto;
     text-align: center;
+    flex-direction: column;
   }
 
   .home__hand {

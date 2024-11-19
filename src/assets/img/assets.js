@@ -14,6 +14,9 @@ import nodejs from './nodejs.svg'
 import coding from './coding.gif'
 import section from './section.svg'
 import shadowBox from './shadow-box.svg'
+import ins from './ins.svg'
+import fb from './fb.svg'
+import github from './github.svg'
 
 export default {
     react,
@@ -31,5 +34,8 @@ export default {
     nodejs,
     coding,
     section,
-    shadowBox
+    shadowBox,
+    ins,
+    fb,
+    github,
 }

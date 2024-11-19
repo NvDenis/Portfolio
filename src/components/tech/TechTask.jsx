@@ -1,5 +1,6 @@
 import "./TechTask.css";
 import assets from "../../assets/img/assets";
+import { useTranslation } from "react-i18next";
 
 const techs = [
   {
@@ -41,9 +42,10 @@ const techs = [
 ];
 
 export const TechTask = () => {
+  const { t } = useTranslation();
   return (
     <div className="techs flex-col lg:flex-row gap-4">
-      <p>Tech Task</p>
+      <p>{t("ki_nang")}</p>
 
       <div
         className="logos"
