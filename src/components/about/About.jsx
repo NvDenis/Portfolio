@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const About = () => {
   const { t } = useTranslation();
   return (
-    <section className="about section" id="about">
+    <section className="about section" id="experience">
       <Fade duration={2000} fraction={0} triggerOnce direction="up">
         <h2 className="section__title">{t("kinh_nghiem")}</h2>
         <span className="section__subtitle">

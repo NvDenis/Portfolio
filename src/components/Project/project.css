@@ -50,19 +50,18 @@
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     height: auto;
     overflow: hidden;
-    height: 300px;
     width: 300px;
+    height: 300px;
 }
 
 .projects-grid .pro__img img {
     height: auto;
     width: 100%;
     transition: transform 3s ease-in-out 0s;
-
 }
 
 .projects-grid .pro__img:hover img {
-    transform: translateY(-10%);
+    transform: translateY(calc(-100% + 300px));
 }
 .projects-grid .pro__text {
     display: flex;

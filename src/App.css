@@ -17,6 +17,7 @@
   --title-section-color: #ec4899;
   --box-background-color: #101123;
   --box-border-color: rgba(27, 44, 104, 0.6274509804);
+  --box-background-color: #0d1224;
 }
 
 [data-theme="light"] {
@@ -35,6 +36,7 @@
   --title-section-color: #0d6efd;
   --box-background-color: white;
   --box-border-color: rgba(0, 0, 0, 0.175);
+  --box-background-color: #f9f9f9f9;
 }
 
 #root {
@@ -172,7 +174,7 @@ img {
 
 /* =========== LAYOUT ============ */
 .container {
-  max-width: 967px !important;
+  max-width: 1000px !important;
   margin: 0 auto;
   padding: 0 1.5rem;
 }

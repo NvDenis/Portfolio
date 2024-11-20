@@ -5,6 +5,7 @@ import bannon from "../../assets/img/Web capture_29-11-2023_145717_bannon-vduyit
 import guppyhocmon from "../../assets/img/guppyhocmon.png";
 import htmlcss from "../../assets/img/Web capture_29-11-2023_225840_.jpeg";
 import nonthao from "../../assets/img/nonthao.png";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
@@ -34,6 +35,7 @@ const projects = [
 ];
 
 const Project = () => {
+  const { t } = useTranslation();
   const handleLiveDemo = (link) => {
     window.open(link, "_blank");
   };
@@ -42,43 +44,47 @@ const Project = () => {
     <section className="projects section " id="projects">
       <div className="projects__container container">
         <Fade duration={2000} fraction={0} triggerOnce direction="up">
-          <h2 className="section__title">Projects</h2>
-          <span className="section__subtitle">My technical level</span>
+          <h2 className="section__title">{t("du_an")}</h2>
+          <span className="section__subtitle">
+            {t("nhung_du_an_toi_da_lam")}
+          </span>
         </Fade>
 
-        <div className="projects-grid">
-          {projects.map((item) => {
-            return (
-              <div className="pro ">
-                <div className="flex items-center justify-center">
-                  <div className="pro__img">
-                    <a
-                      href="https://non-thao-fe.vercel.app/"
-                      target="_blank"
-                      className=""
-                      rel="noreferrer"
-                    >
-                      <img src={item.img} alt="" />
-                    </a>
+        <Fade duration={2000} fraction={0} triggerOnce direction="up">
+          <div className="projects-grid">
+            {projects.map((item, index) => {
+              return (
+                <div className="pro" key={index}>
+                  <div className="flex items-center justify-center">
+                    <div className="pro__img">
+                      <a
+                        href="https://non-thao-fe.vercel.app/"
+                        target="_blank"
+                        className=""
+                        rel="noreferrer"
+                      >
+                        <img src={item.img} alt="" />
+                      </a>
+                    </div>
                   </div>
-                </div>
 
-                <div className="pro__info">
-                  <h2 className="text-center">{item.title}</h2>
-                  <div className="pro__group-btn  py-4">
-                    <button className="pro__btn button">Github</button>
-                    <button
-                      className="pro__btn button primary"
-                      onClick={() => handleLiveDemo(item.link)}
-                    >
-                      Live Demo
-                    </button>
+                  <div className="pro__info">
+                    <h2 className="text-center">{item.title}</h2>
+                    <div className="pro__group-btn  py-4">
+                      <button className="pro__btn button">Github</button>
+                      <button
+                        className="pro__btn button primary"
+                        onClick={() => handleLiveDemo(item.link)}
+                      >
+                        {t("xem_demo")}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Fade>
       </div>
     </section>
   );
