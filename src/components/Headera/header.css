@@ -52,3 +52,21 @@
 .active-link {
   color: var(--pink);
 }
+
+@media (max-width: 768px) {
+  .header {
+    top: unset;
+    bottom: 0;
+    box-shadow: 1px 1px 40px var(--shadow-header-color);
+  }
+
+  .overlay-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure overlay is above the background but below the content */
+    backdrop-filter: blur(20px);
+  }
+}

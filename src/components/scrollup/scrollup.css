@@ -2,9 +2,9 @@
     position        : fixed;
     right           : 2.5rem;
     bottom          : -20%;
-    background-color: var(--title-color);
+    background-color: var(--pink);
     opacity         : 0.8;
-    padding         : 0.3rem 0.5rem;
+    padding         : 0.2rem 0.4rem;
     border-radius   : 0.4rem;
     z-index         : var(--z-tolltip);
     transition      : .4s;
@@ -12,7 +12,7 @@
 
 .scrollup__icon {
     font-size: 1.5rem;
-    color    : var(--container-color);
+    color    : var(--text-color);
 
 }
 
@@ -40,10 +40,8 @@
 /* for medium devices */
 @media screen and (max-width: 768px) {
     .show-scroll {
-        bottom: 4rem;
+        bottom: 5rem;
     }
-
-
 }
 
 

@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <header className={`header ${sticky && "sticky-header "}`}>
-      {sticky && <div className="overlay"></div>}
+      <div className={`${sticky && "overlay"} overlay-mobile`}></div>
       <nav className="nav container">
         <div className="flex items-center gap-4">
           <a href="#home" className="nav__logo">
@@ -92,6 +92,17 @@ const Header = () => {
 
       <Drawer isOpen={toggle} setIsOpen={setToggle}>
         <ul className="nav__list flex-col items-start pt-10 px-4">
+          <li className="nav__item">
+            <a
+              href={"#home"}
+              onClick={() => setActiveNav("#home")}
+              className={
+                activeNav === "#home" ? "nav__link active-link" : "nav__link"
+              }
+            >
+              Duy.dev
+            </a>
+          </li>
           {nav.map((item, index) => {
             return (
               <li className="nav__item" key={index}>

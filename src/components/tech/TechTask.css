@@ -29,6 +29,9 @@
 }
 
 .logos ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: var(--width);
   height: var(--height);
   position: absolute;
