@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <>
+    <div className="snow_wrapper">
       <Header />
       <main className="main">
         <Home />
@@ -24,7 +24,9 @@ function App() {
       <Footer />
       <ScrollUp />
       <ToastContainer />
-    </>
+
+      <div className="snow"></div>
+    </div>
   );
 }
 

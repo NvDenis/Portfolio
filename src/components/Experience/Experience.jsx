@@ -2,6 +2,7 @@ import { Fade } from "react-awesome-reveal";
 import "./Experience.css";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useTranslation } from "react-i18next";
+import assets from "../../assets/img/assets";
 
 const Experience = () => {
   const { t } = useTranslation();
@@ -53,6 +54,17 @@ const Experience = () => {
                 autoplay
               />
             </div>
+
+            <img
+              src={assets.blur}
+              style={{
+                filter: "blur(100px)",
+                position: "absolute",
+                zIndex: -1,
+                right: 0,
+              }}
+              alt=""
+            />
           </div>
         </Fade>
 

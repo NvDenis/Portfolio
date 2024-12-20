@@ -12,25 +12,25 @@ const projects = [
     id: 1,
     title: "Ecommerce Website",
     img: nonthao,
-    link: "https://nonthao.up.railway.app/",
+    link: "https://non-web.onrender.com",
   },
   {
     id: 2,
     title: "Ecommerce Website",
     img: guppyhocmon,
-    link: "https://bannon-vduyit.vercel.app/",
+    link: "https://guppyhocmon.vn",
   },
   {
     id: 3,
     title: "Ecommerce Website",
     img: bannon,
-    link: "https://bannon-vduyit.vercel.app/",
+    link: "https://bannon-vduyit.vercel.app",
   },
   {
     id: 4,
     title: "Landing Page",
     img: htmlcss,
-    link: "https://bannon-vduyit.vercel.app/",
+    link: "https://bannon-vduyit.vercel.app",
   },
 ];
 
@@ -68,7 +68,7 @@ const Project = () => {
                     </div>
                   </div>
 
-                  <div className="pro__info">
+                  <div className="pro__info relative z-10">
                     <h2 className="text-center">{item.title}</h2>
                     <div className="pro__group-btn  py-4">
                       <button className="pro__btn button">Github</button>
