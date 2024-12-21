@@ -61,95 +61,12 @@ const Experience = () => {
                 filter: "blur(100px)",
                 position: "absolute",
                 zIndex: -1,
-                right: 0,
               }}
+              className="left-0 top-24 lg:right-0 lg:left-[unset] lg:top-20"
               alt=""
             />
           </div>
         </Fade>
-
-        {/* <div className="experience__container">
-          <div className="experience__frontend">
-            <h2>Frontend</h2>
-            <ul className="tech-list">
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>HTML</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>CSS</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>JAVASCRIPT</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>TYPESCRIPT</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>REACTJS</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>ANGULAR</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="experience__frontend">
-            <h2>Backend</h2>
-            <ul className="tech-list">
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>NODEJS</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>EXPRESS</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>MONGODB</span>
-                </div>
-              </li>
-              <li className="tech-list__item">
-                <div>
-                  <img src={checkmark} alt="" />
-
-                  <span>GIT</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div> */}
       </div>
     </div>
   );
